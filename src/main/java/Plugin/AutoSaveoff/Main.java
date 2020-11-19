@@ -10,6 +10,8 @@ import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class Main extends JavaPlugin implements Listener {
+	static boolean flag = true;
+
 	public void onEnable() {
 		getServer().getPluginManager().registerEvents(this, this);
 	}
@@ -21,18 +23,21 @@ public class Main extends JavaPlugin implements Listener {
 	@EventHandler
 	public void onPlayerJoin(PlayerJoinEvent event) {
 		String player = event.getPlayer().toString();
-		List<String> opList = new ArrayList<String>();
-		opList.add("CraftPlayer{name=CodingBarOP1}");
-		opList.add("CraftPlayer{name=CodingBarOP2}");
-		opList.add("CraftPlayer{name=CodingBarOP3}");
-		opList.add("CraftPlayer{name=CodingBarOP4}");
-		opList.add("CraftPlayer{name=Prophet_EM}");
+		if (flag) {
+			flag = false;
+			List<String> opList = new ArrayList<String>();
+			opList.add("CraftPlayer{name=CodingBarOP1}");
+			opList.add("CraftPlayer{name=CodingBarOP2}");
+			opList.add("CraftPlayer{name=CodingBarOP3}");
+			opList.add("CraftPlayer{name=CodingBarOP4}");
+			opList.add("CraftPlayer{name=Prophet_EM}");
 
-		for (String op : opList) {
-			if (player.equals(op)) {
-				Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "save-off");
+			for (String op : opList) {
+				if (player.equals(op)) {
+					Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "save-off");
+					System.out.println("----AutoSaveoffPlugin Started.----");
+				}
 			}
 		}
-
 	}
 }
