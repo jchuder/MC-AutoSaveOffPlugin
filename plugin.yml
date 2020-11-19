@@ -1,0 +1,7 @@
+name: AutoSaveoffPlugin
+main: Plugin.AutoSaveoff.Main
+version: 1.0
+description: 特定帳號登入後自動save-off
+author: airabbi.Jessie
+api-version: 1.12
+website: codingbar.ai
