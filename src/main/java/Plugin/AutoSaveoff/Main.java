@@ -35,7 +35,7 @@ public class Main extends JavaPlugin implements Listener {
 			for (String op : opList) {
 				if (player.equals(op)) {
 					Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "save-off");
-					System.out.println("----AutoSaveoffPlugin Started.----");
+					System.out.println("----AutoSaveoffPlugin has been executed.----");
 				}
 			}
 		}
