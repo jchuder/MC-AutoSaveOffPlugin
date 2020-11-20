@@ -22,15 +22,15 @@ public class Main extends JavaPlugin implements Listener {
 
 	@EventHandler
 	public void onPlayerJoin(PlayerJoinEvent event) {
-		String player = event.getPlayer().toString();
+		String player = event.getPlayer().getName();
 		if (flag) {
 			flag = false;
 			List<String> opList = new ArrayList<String>();
-			opList.add("CraftPlayer{name=CodingBarOP1}");
-			opList.add("CraftPlayer{name=CodingBarOP2}");
-			opList.add("CraftPlayer{name=CodingBarOP3}");
-			opList.add("CraftPlayer{name=CodingBarOP4}");
-			opList.add("CraftPlayer{name=Prophet_EM}");
+			opList.add("CodingBarOP1");
+			opList.add("CodingBarOP2");
+			opList.add("CodingBarOP3");
+			opList.add("CodingBarOP4");
+			opList.add("Prophet_EM");
 
 			for (String op : opList) {
 				if (player.equals(op)) {
